@@ -7,25 +7,6 @@ void swap(int *xp, int *yp)
     *xp = *yp; 
     *yp = temp; 
 } 
-  
-/*void selectionSort(int arr[], int n) 
-{ 
-    int i, j, min_idx; 
-  
-    // One by one move boundary of unsorted subarray 
-    for (i = 0; i < n-1; i++) 
-    { 
-        // Find the minimum element in unsorted array 
-        min_idx = i; 
-
-        for (j = i+1; j < n; j++) 
-          if (?) 
-            ?
-  
-        // Swap the found minimum element with the first element 
-        swap(?); 
-    } 
-} */
 
 void selectionSort(int arr[], int n) 
 { 
@@ -36,15 +17,17 @@ void selectionSort(int arr[], int n)
     { 
         // Find the minimum element in unsorted array 
         min_idx = i; 
+
         for (j = i+1; j < n; j++) 
-          if (arr[j] < arr[min_idx]) 
-            min_idx = j; 
+          if (???) 
+            ???
   
         // Swap the found minimum element with the first element 
-        swap(&arr[min_idx], &arr[i]); 
+        swap(???, ???); 
     } 
 } 
-  
+
+
 /* Function to print an array */
 void printArray(int arr[], int size) 
 { 
