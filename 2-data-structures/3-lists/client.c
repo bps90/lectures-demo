@@ -7,7 +7,9 @@
 int main()  
 {  
     /* Start with the empty list */
-    struct Node* head = NULL;  
+    struct ListNode* head = NULL;  
+    struct ListNode* dummy = NULL;  
+
     push(&head, 7);  
   
     push(&head, 1);  
@@ -28,17 +30,19 @@ int main()
     printf("count of nodes is %d\n", getCount(head));
   
     /* delete nodes from the doubly linked list */
-    deleteNode(&head, head); /*delete first node*/
-    deleteNode(&head, head->next); /*delete middle node*/
-    deleteNode(&head, head->next); /*delete last node*/
+    deleteListNode(&head, head); /*delete first node*/
+    deleteListNode(&head, head->next); /*delete middle node*/
+    deleteListNode(&head, head->next); /*delete last node*/
   
     /* Modified linked list will be NULL<-8->NULL */
     printf("\n Modified Linked list "); 
     printList(head); 
     
 
-    search(head, 9)? printf("9 Yep\n") : printf("9 Nop\n"); 
-    search(head, 1)? printf("1 Yep\n") : printf("1 Nop\n"); 
+    dummy = search(head, 9);
+    dummy != NULL? printf("9 Yep\n") : printf("9 Nop\n"); 
+    dummy = search(head, 1);
+    dummy != NULL? printf("1 Yep\n") : printf("1 Nop\n"); 
 
     getchar();  
     return 0;  

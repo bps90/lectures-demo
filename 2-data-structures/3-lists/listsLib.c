@@ -7,9 +7,9 @@
   
 /* Given a reference (pointer to pointer) to the head of a list  
 and an int, inserts a new node on the front of the list. */
-void push(struct Node** head_ref, int new_data)  
+void push(struct ListNode** head_ref, int new_data)  
 {  
-    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));  
+    struct ListNode* new_node = (struct ListNode*)malloc(sizeof(struct ListNode));  
   
     new_node->data = new_data;  
   
@@ -23,7 +23,7 @@ void push(struct Node** head_ref, int new_data)
 }  
   
 /* Given a node as next_node, insert a new node before the given node */
-void insertBefore(struct Node** head_ref, struct Node* next_node, int new_data)  
+void insertBefore(struct ListNode** head_ref, struct ListNode* next_node, int new_data)  
 {  
     /*1. check if the given next_node is NULL */
     if (next_node == NULL) {  
@@ -32,7 +32,7 @@ void insertBefore(struct Node** head_ref, struct Node* next_node, int new_data)
     }  
   
     /* 2. allocate new node */
-    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));  
+    struct ListNode* new_node = (struct ListNode*)malloc(sizeof(struct ListNode));  
   
     /* 3. put in the data */
     new_node->data = new_data;  
@@ -57,9 +57,9 @@ void insertBefore(struct Node** head_ref, struct Node* next_node, int new_data)
 }  
   
 // This function prints contents of linked list starting from the given node  
-void printList(struct Node* node)  
+void printList(struct ListNode* node)  
 {  
-    struct Node* last;  
+    struct ListNode* last;  
     printf("\nTraversal in forward direction \n");  
     while (node != NULL) {  
         printf(" %d ", node->data);  
@@ -78,7 +78,7 @@ void printList(struct Node* node)
 /* Function to delete a node in a Doubly Linked List. 
    head_ref --> pointer to head node pointer. 
    del  -->  pointer to node to be deleted. */
-void deleteNode(struct Node** head_ref, struct Node* del) 
+void deleteListNode(struct ListNode** head_ref, struct ListNode* del) 
 { 
     /* base case */
     if (*head_ref == NULL || del == NULL) 
@@ -102,23 +102,23 @@ void deleteNode(struct Node** head_ref, struct Node* del)
 } 
 
 /* Checks whether the value x is present in linked list */
-bool search(struct Node* head, int x)
+struct ListNode* search(struct ListNode* head, int x)
 { 
-    struct Node* current = head;  // Initialize current 
+    struct ListNode* current = head;  // Initialize current 
     while (current != NULL) 
     { 
         if (current->data == x) 
-            return true; 
+            return current; 
         current = current->next; 
     } 
-    return false; 
+    return NULL; 
 } 
 
 /* Counts no. of nodes in linked list */
-int getCount(struct Node* head) 
+int getCount(struct ListNode* head) 
 { 
     int count = 0;  // Initialize count 
-    struct Node* current = head;  // Initialize current 
+    struct ListNode* current = head;  // Initialize current 
     while (current != NULL) 
     { 
         count++; 

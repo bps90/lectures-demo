@@ -1,25 +1,25 @@
 #include <stdbool.h> 
 
 // A linked list node  
-struct Node {  
+struct ListNode {  
     int data;  
-    struct Node* next;  
-    struct Node* prev;  
+    struct ListNode* next;  
+    struct ListNode* prev;  
 };  
   
 /* Given a reference (pointer to pointer) to the head of a list  
 and an int, inserts a new node on the front of the list. */
-void push(struct Node** head_ref, int new_data);
+void push(struct ListNode** head_ref, int new_data);
   
 /* Given a node as next_node, insert a new node before the given node */
-void insertBefore(struct Node** head_ref, struct Node* next_node, int new_data);
+void insertBefore(struct ListNode** head_ref, struct ListNode* next_node, int new_data);
   
 // This function prints contents of linked list starting from the given node  
-void printList(struct Node* node);
+void printList(struct ListNode* node);
 
-void deleteNode(struct Node** head_ref, struct Node* del);
+void deleteListNode(struct ListNode** head_ref, struct ListNode* del);
 
-bool search(struct Node* head, int x);
+struct ListNode* search(struct ListNode* head, int x);
 
-int getCount(struct Node* head);
+int getCount(struct ListNode* head);
 
